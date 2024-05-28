@@ -64,9 +64,6 @@ class Order extends Model
         if( empty($args) ){
             return self::count();
         }
-
-
-
     }
 
     /**
