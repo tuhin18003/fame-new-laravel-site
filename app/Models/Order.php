@@ -159,7 +159,7 @@ class Order extends Model
 
             return array(
                 'sales_revenue' => array(
-                    'total_sales' => Money::of( $total_sales, 'USD'),
+                    'total_sales' => Money::of( (float) $total_sales, 'USD'),
                     'total_revenue' => Money::of( $total_revenue, 'USD'),
                     'data' => $result
                 )

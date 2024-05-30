@@ -38,11 +38,15 @@ class DashboardController extends Controller
         //sales revenue
         $sales_revenue = Order::countSalesRevenue( $date );
 
+        //top 10 products
+        $most_sold_items = OrdersProduct::mostSoldItems( $date + array( 'get_total_items' => 2 ) );
 
+        
         return \response()->json([
             'total_orders' => $total_orders,
             'items_sold' => $items_sold,
-            'sales_revenue' => $sales_revenue
+            'sales_revenue' => $sales_revenue,
+            'most_sold_items' => $most_sold_items
         ]);
 
     }
